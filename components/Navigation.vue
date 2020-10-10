@@ -6,18 +6,16 @@ export default class Navigation extends Vue {}
 </script>
 
 <template>
-  <div class="container">
-    <div class="title">
-      <a href="/">
-        <img class="logo" src="~assets/images/logo.svg" />
-      </a>
-      <div class="title-text">Streaming Hell</div>
-    </div>
+  <div class="navigation">
+    <nuxt-link to="/" class="logo">
+      <img class="logo__image" src="~assets/images/logo.svg" alt="" />
+      <span class="logo__text">Streaming Hell</span>
+    </nuxt-link>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container {
+.navigation {
   width: 100%;
   height: 50px;
   margin-bottom: 10px;
@@ -32,23 +30,24 @@ export default class Navigation extends Vue {}
   box-sizing: border-box;
 }
 
-.title {
+.logo {
   margin-top: -4px;
   display: flex;
   align-items: center;
   color: #172b4d;
   font-size: 18px;
   font-weight: 800;
-}
+  text-decoration: none;
 
-.title-text {
-  margin-top: 2px;
-  margin-left: 3px;
-}
+  &__text {
+    margin-top: 2px;
+    margin-left: 3px;
+  }
 
-.logo {
-  height: auto;
-  max-height: 47px;
-  max-width: 100%;
+  &__image {
+    height: auto;
+    max-height: 47px;
+    max-width: 100%;
+  }
 }
 </style>
